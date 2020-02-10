@@ -10,7 +10,6 @@ module.exports = class Help extends Command{
 	static action (message) {
 		let help = new Discord.RichEmbed()
 			.setTitle('HELP')
-			.setAuthor("gouderg")
 			.setDescription("Liste des commandes :")
 			.addBlankField()
 			.addField("!ping", "Renvoie Pong", true)
