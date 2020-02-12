@@ -1,13 +1,15 @@
 const Command = require('./command');
-const YoutubeStream = require('youtube-audio-stream');
+const Discord = require('discord.js');
 
-module.exports = class Play extends Command{
+
+module.exports = class Playlist extends Command{
 
 	static match(message) {
-		return message.content.startsWith('!play');
+		return message.content.startsWith('!playlist');
 	}
 
 	static action (message) {
+
 		let voiceChannel = message.guild.channels
 		.filter(function(channel) { return channel.type === 'voice'})
 		.first();
@@ -29,6 +31,6 @@ module.exports = class Play extends Command{
 			}
 			
 		});
+		
 	}
 }
-

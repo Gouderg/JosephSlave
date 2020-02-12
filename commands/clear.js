@@ -1,29 +1,35 @@
-const Command = require('./command')
-const Discord = require("discord.js")
+const Command = require('./command');
+const Discord = require("discord.js");
 
 module.exports = class Clear extends Command{
 
 	static match(message) {
-		return message.content.startsWith('!clear')
+		return message.content.startsWith('!clear');
 	}
 
 	static action (message) {
-		let msg = message.content.split(" ")
-		msg.shift()
+		let msg = message.content.split(" ");
+		msg.shift();
+		try {
+			if (message.content === "!clear") {
+				message.reply("Combien de messages à supprimé ?");
 
-		if (message.content === "!clear") {
-			message.reply("Combien de messages à supprimé ?")
-
-		} else {
-			let x = parseInt(msg[0], 10)
-			if (x > 100) {
-				x = 100
+			} else {
+				let x = parseInt(msg[0], 10)
+				if (x > 100) {
+					x = 100;
+				}
+				message.delete();
+				message.channel.bulkDelete(x);
+				message.reply(x = 'messages supprimés');
+				message.channel.bulkDelete(1);
+			} 
+		} catch(error) {
+				console.log(error);
+				message.channel.send("Tu t'es trompé de commande gros nul.");
 			}
-			message.delete()
-			message.channel.bulkDelete(x)
-			message.reply(x = 'messages supprimés')
-			message.channel.bulkDelete(1)
-		}
+
+		
 	}
 }
 

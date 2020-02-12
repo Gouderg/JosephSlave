@@ -2,14 +2,14 @@ module.exports = class Command {
 
 	static parse (message) {
 		if (this.match(message)) {
-			this.action(message)
-			return true
+			this.action(message);
+			return true;
 		}
-		return false
+		return false;
 	}
 
 	static match (message) {
-		return false
+		return false;
 	}
 
 	static action (message) {
