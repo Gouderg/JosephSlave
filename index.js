@@ -10,6 +10,7 @@ const Clear =  require('./commands/clear');
 const Playlist = require('./commands/playlist');
 const Wikipedia = require('./commands/wikipedia');
 const Info = require('./commands/info');
+const Nasa_pic = require('./commands/nasa_pic');
 
 bot.on('ready', function () {
 	//bot.user.setAvatar('./avatar.jpg').catch(console.error)
@@ -31,7 +32,8 @@ bot.on('message', message => {
 		Playlist.parse(message) ||
 		Google.parse(message) || 
 		Ping.parse(message) || 
-		Play.parse(message);
+		Play.parse(message) ||
+		Nasa_pic.parse(message);
 });
 
 bot.login(token);

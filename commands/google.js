@@ -14,19 +14,18 @@ module.exports = class Google extends Command{
 		let url = "https://www.google.fr/search?q=";
 		args.forEach(function(arg) {
 			arg = encodeURIComponent(arg);
-			url = url+arg+'%2B';
+			url = url+arg;
 		});
 		console.log(url);
 		
 		try {
 			var xhr = new XMLHttpRequest();
-			//Encoder les paramètres pour éviter les caractères interdits
-			//var value1 = encodeURIComponent(value1);	
 			xhr.open('GET', url, true);
 			xhr.send(null);
 			xhr.addEventListener('readystatechange', function() {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					var data = xhr.responseText;
+					//console.log(data);
 				}
 
 

@@ -10,3 +10,4 @@ sudo apt-get install ffmpeg
 npm i --save discord.js
 npm i --save node-opus
 npm i --save youtube-audio-stream
+sudo npm i --save xmlhttprequest

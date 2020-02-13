@@ -29,7 +29,12 @@ module.exports = class Info extends Command{
 
 				case "liste":
 					cmd = "Liste commande: ";
-					descrip ="clear\ngoogle\nping\nplay\nplaylist\nwikipedia";
+					descrip ="clear\ngoogle (WIP)\nnasa\nping\nplay\nplaylist (WIP)\nwikipedia";
+				break;
+
+				case "nasa":
+					cmd = "!nasa -pic YYYY-MM-DD";
+					descrip = "Affiche une image de l'espace avec une description donnée par la Nasa.\nAffiche la photo du jour si aucune date n'est passée en paramètres";
 				break;
 
 				case "ping":
