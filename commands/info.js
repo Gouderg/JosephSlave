@@ -33,7 +33,7 @@ module.exports = class Info extends Command{
 				break;
 
 				case "nasa":
-					cmd = "!nasa -pic YYYY-MM-DD";
+					cmd = "!nasa -pic {YYYY-MM-DD}";
 					descrip = "Affiche une image de l'espace avec une description donnée par la Nasa.\nAffiche la photo du jour si aucune date n'est passée en paramètres";
 				break;
 
