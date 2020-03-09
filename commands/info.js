@@ -29,9 +29,13 @@ module.exports = class Info extends Command{
 
 				case "liste":
 					cmd = "Liste commande: ";
-					descrip ="clear\ngoogle (WIP)\nnasa\nping\nplay\nplaylist (WIP)\nwikipedia";
+					descrip ="clear\ngoogle (WIP)\nmeteo\nnasa\nping\nplay\nplaylist (WIP)\nwikipedia";
 				break;
 
+				case "meteo":
+					cmd = "!meteo -city {London} {country code}";
+					descrip = "Affiche la météo de la ville en anglais. Affiche la ville de Brest par défaut.\nNorme ISO 3166 pour les country code  (fr pour la France)"
+				break;
 				case "nasa":
 					cmd = "!nasa -pic {YYYY-MM-DD}";
 					descrip = "Affiche une image de l'espace avec une description donnée par la Nasa.\nAffiche la photo du jour si aucune date n'est passée en paramètres";
