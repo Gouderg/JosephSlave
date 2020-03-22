@@ -12,6 +12,7 @@ const Wikipedia = require('./commands/wikipedia');
 const Info = require('./commands/info');
 const Nasa_pic = require('./commands/nasa_pic');
 const Meteo_city = require('./commands/meteo_ville.js');
+const Joke = require('./commands/joke.js');
 
 bot.on('ready', function () {
 	//bot.user.setAvatar('./avatar.jpg').catch(console.error)
@@ -35,7 +36,8 @@ bot.on('message', message => {
 		Ping.parse(message) || 
 		Play.parse(message) ||
 		Nasa_pic.parse(message) ||
-		Meteo_city.parse(message);
+		Meteo_city.parse(message) ||
+		Joke.parse(message)
 });
 
 bot.login(token);
